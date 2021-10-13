@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>シケタイ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <h1>Welcome to Siketai!!</h1>
+        <div class="content-box">
+            <h1> DiscordのURL</h1>
+            <p><a href="https://discord.gg/V79aWQS2QA" target="_new">ここをクリック！</a></p>
+        </div>
+        <h2>概要</h2>
+        <div class="box30">
+            <div class="box-title">シケタイについて</div>
+            <p>サーバー本体とサーバー内に存在する『@sensei』という名前のbotがあなたの集団作業をサポートします</p>
+        </div>
+        <h2>次のような機能がご利用いただけます</h2>
+        <div class="box30">
+            <div class="box-title">サーバー本体に搭載されている機能</div>
+            <p>あなたがGoogleカレンダーに入力した作業会の予定を全体にリマインドしてくれます</p>
+        </div>
+        <div class="box30">
+            <div class="box-title">bot『@sensei』に搭載されている機能</div>
+            <p>タイマーを設定して作業時間、休憩時間、終了時間を時間管理することができます</p>
+            <p>ファイル共有へのURLが表示され、参加者でファイルの共有をすることができます</p>
+        </div>
+
+        <div class="box30">
+        <div class="box-title">bot『@sensei』使用方法</div>
+        <p>
+            チャット欄にて『@sensei
+            コマンド名』とメンションをすることでさまざまな機能をご利用いただけます。
+        </p>
+        <table>
+            <tr>
+            <th>コマンド</th>
+            <th>機能</th>
+            </tr>
+            <tr>
+            <td><pre>@sensei help</pre></td>
+            <td>使用可能なコマンド一覧と簡単な説明を教えてくれます。</td>
+            </tr>
+            <tr>
+            <td><pre>@sensei helpall</pre></td>
+            <td>使用可能なコマンド一覧と詳細な説明を教えてくれます。</td>
+            </tr>
+            <tr>
+            <td><pre>@sensei starttimer</pre></td>
+            <td>
+                勉強＆休憩の繰り返しをタイマーが通知して支援してくれるコマンドです。
+            </td>
+            </tr>
+            <tr>
+            <td><pre>@sensei stoptimer</pre></td>
+            <td>
+                必要がなくなったタイマーを停止するコマンドです。オプションでタイマーのIDを指定する必要があります。
+            </td>
+            </tr>
+            <tr>
+            <td><pre>@sensei share</pre></td>
+            <td>
+                シケタイ用のファイル共有URLを教えてくれます。このGoogleDriveのURLをクリックするとだれでもファイルをダウンロード、アップロードすることができます。
+            </td>
+            </tr>
+            <tr>
+            <td><pre>@sensei nokori</pre></td>
+            <td>指定した時間まであと残り何分か教えてくれるコマンドです。</td>
+            </tr>
+            <tr>
+            <td><pre>@sensei pomodoro</pre></td>
+            <td>
+                「ポマドーロテクニック」25分間の勉強,5分間の休憩の繰り返しを助けてくれるコマンドです。
+            </td>
+            </tr>
+        </table>
+        </div>
+
+        <div class="calendar">
+        <h2>作業会確認カレンダー</h2>
+        <iframe src="https://calendar.google.com/calendar/embed?src=2uthi6l10v0urrpr8peo076blk%40group.calendar.google.com&ctz=Asia%2FTokyo" style="border: 0" width="60%" height="600" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </body>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .content-box {
+        padding: 0.5em 1em;
+        margin: 2em 20%;
+        font-weight: bold;
+        color: #000000;
+        background: #EEEEEE;
+        border: solid 1px #000000;
+        border-radius: 10px;
+        }
+        .content-box p{
+            text-align: center;
+        }
+        h2{
+            text-align: center;
+        }
+        .box30 {
+            margin: 2em 20%;
+            background: #f1f1f1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+            border-radius: 10px;
+        }
+        .box30 .box-title {
+            font-size: 1.2em;
+            background: #5fc2f5;
+            padding: 4px;
+            text-align: center;
+            color: #FFF;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+        }
+        .box30 p {
+            padding: 15px 20px;
+            margin: 0
+        }
+        .calendar{
+            text-align: center;
+        }
+        
+    </style>
+        
+</html>

@@ -1,0 +1,47 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css"
+              href="{% static 'app/css/style.css' %}" />
+    </head>
+    <body class="body_content">
+        <div class="body_content_inner">
+            <table class="login_table" width="100%">
+                <tr>
+                    <th width="150px">シケタイ</th>
+                    <td>
+                        <table class="login_table_inner">
+                            <tr>
+                                {% block menu %}{% endblock %}
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="150px">login user:</th>
+                    <td>"{{username}}"</td>
+                </tr>
+            </table>
+            <div class="header">
+                {% block header %}{% endblock %}
+            </div>
+            <div class="content">
+                {% block content %}{% endblock %}
+            </div>
+            <div class="fotter">
+                <hr>
+                <div>
+                    <span style="float:left;font-wight:bold;">
+                        <a href="{% url 'logout' %}">[ logout ]</a>
+                    </span>
+                </div>
+                <div>
+                    <span style="float:right">copyright 2021 Hanasiainokai</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

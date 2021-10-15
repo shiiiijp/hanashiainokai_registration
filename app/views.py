@@ -10,6 +10,9 @@ from django.contrib.auth import authenticate, login, logout as django_logout
 from django.core.paginator import Paginator
 from django.core.validators import ValidationError
 
+from django.views import generic
+from . import mixins
+
 import base64
 
 def login_user(request):
@@ -64,3 +67,13 @@ def index(request, username, password):
 def logout(request):
     django_logout(request)
     return render(request, 'studentdatabase/logout.html')
+
+class MonthCalendar(mixins.MonthCalendarMixin, generic.TemplateView):
+    """月間カレンダーを表示するビュー"""
+    template_name = 'app/month.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        calendar_context = self.get_month_calendar()
+        context.update(calendar_context)
+        return context

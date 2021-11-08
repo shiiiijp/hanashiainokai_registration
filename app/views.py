@@ -20,6 +20,13 @@ from .forms import BS4ScheduleForm
 from .forms import SimpleScheduleForm
 from .models import Schedule
 
+from django.shortcuts import get_object_or_404
+from django.views.decorators.http import require_POST
+from rest_framework.views import APIView
+
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse, reverse_lazy
+
 def login_user(request):
     params = {
         'login_form': LoginForm(),
@@ -65,16 +72,30 @@ def index(request, username, password):
     password3 = base64.b64decode(password).decode()
 
     user = authenticate(username=username3, password=password3)
+    params = {
+        'user': user,
+    }
     if user is None:
         return redirect('login')
-    return render(request, 'app/index.html')
+    return render(request, 'app/index.html', params)
 
 def logout(request):
     django_logout(request)
     return render(request, 'app/logout.html')
 
-def delete(request):
-    return render(request, 'app/delete.html')
+""" @require_POST """
+class delete_schedule(DeleteView):
+    template_name = 'app/delete.html'
+    model = Schedule
+
+    date = datetime.date.today()
+    success_url = reverse_lazy('mycalendar')
+
+""" def delete(request, schedule_id):
+    schedule = get_object_or_404(Schedule, id = schedule_id)
+    schedule.delete()
+    return redirect('calendar')
+ """
 
 class MonthCalendar(mixins.MonthCalendarMixin, generic.TemplateView):
     """月間カレンダーを表示するビュー"""
@@ -92,6 +113,14 @@ class MyCalendar(mixins.MonthCalendarMixin, mixins.WeekWithScheduleMixin, generi
     model = Schedule
     date_field = 'date'
     form_class = BS4ScheduleForm
+
+    """ def get(self, request, **kwargs):
+        if "query_param" in request.GET:
+            param_value = request.GET.get("query_param")
+            return param_value
+        else:
+            context = self.get_month_calendar()
+            return render(request, self.template_name, context) """
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

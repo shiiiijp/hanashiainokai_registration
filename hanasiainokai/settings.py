@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'app',
     
 #    'sample_app.apps.SampleAppConfig', # Custom App
-    'accounts.apps.AccountsConfig',    # 追加
+#    'accounts.apps.AccountsConfig',    # 追加
 ]
 
 MIDDLEWARE = [

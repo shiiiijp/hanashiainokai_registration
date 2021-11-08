@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'app',
     
-    'sample_app.apps.SampleAppConfig', # Custom App
+#    'sample_app.apps.SampleAppConfig', # Custom App
     'accounts.apps.AccountsConfig',    # 追加
 ]
 

@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'app',
     
-    #'sample_app.apps.SampleAppConfig', # Custom App
-    #'accounts.apps.AccountsConfig',    # 追加
+    'sample_app.apps.SampleAppConfig', # Custom App
+    'accounts.apps.AccountsConfig',    # 追加
 ]
 
 MIDDLEWARE = [
@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#    'whitenoise.middleware.WhiteNoiseMiddleware', #追加
+    'whitenoise.middleware.WhiteNoiseMiddleware', #追加
 ]
 
 ROOT_URLCONF = 'app.urls'
